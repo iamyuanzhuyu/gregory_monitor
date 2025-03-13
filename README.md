@@ -43,7 +43,7 @@ USER_AGENT=Mozilla/5.0 ...
 ## 使用方法
 
 ```bash
-python discount_monitor.py
+python gregory_monitor.py
 ```
 
 ## 部署说明

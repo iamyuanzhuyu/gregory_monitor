@@ -49,7 +49,7 @@ class Config:
                 errors.append(f"配置项 {field} 不能为空")
         return errors
 
-# 将 DiscountMonitor 改名为更通用的名称，比如 GregoryMonitor
+
 class GregoryMonitor:
     """折扣监控类"""
     def __init__(self, config: Config):
@@ -69,7 +69,7 @@ class GregoryMonitor:
         log_dir.mkdir(exist_ok=True)
         
         logging.basicConfig(
-            # 将日志文件名从 discount_monitor.log 改为 gregory.log
+           
             filename='logs/gregory.log',
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s: %(message)s',
@@ -123,7 +123,7 @@ class GregoryMonitor:
             """
 
             message = MIMEText(mail_content, 'html', 'utf-8')
-            # 更新发件人显示名称
+          
             message['From'] = Header("Gregory 监控机器人", 'utf-8')
             message['To'] = Header(self.config.receiver, 'utf-8')
             message['Subject'] = Header("[重要] 发现打折信息！", 'utf-8')
